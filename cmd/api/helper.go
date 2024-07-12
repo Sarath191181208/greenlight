@@ -26,9 +26,11 @@ func (app *Application) readIDParams(r *http.Request) (int64, error) {
 	return id, nil
 }
 
+type envelope map[string]interface{}
+
 // Takes a data interface{} and writes it inot the response writer
 // with the given headers and the status code
-func (app *Application) writeJSON(data interface{}, w http.ResponseWriter, httpStatus int, headers http.Header)  error {
+func (app *Application) writeJSON(data envelope, w http.ResponseWriter, httpStatus int, headers http.Header)  error {
   // convert data to json 
   json, err := json.Marshal(data)
   if err != nil {
