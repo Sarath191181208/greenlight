@@ -9,7 +9,13 @@ import (
 )
 
 func (app *Application) createMovieHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Create new movie\n")
+  // read the json data given by the user
+  var movie data.Movie
+  err := app.readJSON(&movie, w, r) 
+  if err != nil{
+    app.errorResponse(w, r, http.StatusBadRequest, err)
+    return 
+  }
 }
 
 func (app *Application) showMovieHandler(w http.ResponseWriter, r *http.Request) {
