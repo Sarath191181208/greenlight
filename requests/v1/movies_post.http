@@ -3,6 +3,7 @@ POST http://localhost:4000/v1/movies
 {
 	"id": 1,
 	"title": "Title of the book",
+  "runtime": "21 mins",
 	"year":2024,
 	"generes":["horror", "mystery"],
 	"version": 1
