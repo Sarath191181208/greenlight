@@ -24,5 +24,5 @@ confirm:
 run/live:
 	air \
 		--build.cmd "go build -o /tmp/bin/${BINARY_NAME} ${MAIN_PACKAGE_PATH}" \
-		--build.bin "./bin/api" \
+		--build.bin "/tmp/bin/api" \
 		--build.exclude_dir "requests"
